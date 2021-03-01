@@ -43,14 +43,14 @@ public class LancamentoRepositoryImpl implements LancamentoRepositoryQuery {
 					builder.lower(root.get(Lancamento_.descricao)), "%" + lancamentoFilter.getDescrica().toLowerCase() + "%"));
 		}
 		
-		if (lancamentoFilter.getDataVencimentoDe() != null) {
+		if (lancamentoFilter.getDatavencimentoDe() != null) {
 			predicates.add(
-					builder.greaterThanOrEqualTo(root.get(Lancamento_.dataVencimento), lancamentoFilter.getDataVencimentoDe()));
+					builder.greaterThanOrEqualTo(root.get(Lancamento_.dataVencimento), lancamentoFilter.getDatavencimentoDe()));
 		}
 		
-		if (lancamentoFilter.getDataVencimentoAte() != null) {
+		if (lancamentoFilter.getDatavencimentoAteDate() != null) {
 			predicates.add(
-					builder.lessThanOrEqualTo(root.get(Lancamento_.dataVencimento), lancamentoFilter.getDataVencimentoAte()));
+					builder.lessThanOrEqualTo(root.get(Lancamento_.dataVencimento), lancamentoFilter.getDatavencimentoAteDate()));
 		}
 		
 		return predicates.toArray(new Predicate[predicates.size()]);
